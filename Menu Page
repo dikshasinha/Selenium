@@ -1,0 +1,32 @@
+using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using TechTalk.SpecFlow;
+using OpenQA.Selenium.Remote;
+using FluentAssertions.Collections;
+using OpenQA.Selenium.Internal;
+
+
+
+
+namespace MerretDemoproject
+{
+    class MenuPage
+    {
+        private IWebDriver driver;
+
+        internal MenuPage(IWebDriver driver) { this.driver = driver; }
+
+        By TileBuyersPage = By.Id("ContentPlaceHolder1_rptMenu_btnMenuSelection_0");
+
+
+
+        internal void GoToBuyersPage()
+        {
+            driver.FindElement(TileBuyersPage).Click();
+
+        }
+   
+
+
+    }
+}
