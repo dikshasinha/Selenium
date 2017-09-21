@@ -1,0 +1,46 @@
+[When(@"I go to the Buyers page")]
+        public void WhenIGoToTheBuyersPage()
+        {
+            menuPage = new MenuPage(driver);
+            menuPage.GoToBuyersPage();
+        }
+
+        [Then(@"the Purchasing tile should be present")]
+        public void ThenThePurchasingTileShouldBePresent()
+        {
+            buyersMenuPage = new BuyersMenuPage(driver);
+            buyersMenuPage.PurchasingtilePresent().Should().BeTrue();
+        }
+        [When(@"I go to the Purchasing page")]
+        public void WhenIAmGoToThePurchasingPage()
+        {
+            buyersMenuPage = new BuyersMenuPage(driver);
+            buyersMenuPage.GoToPurchasingMenuPage();
+        }
+
+        [Then(@"the PO Maintenance tile should be present")]
+        public void ThenThePOMaintenanceTileShouldBePresent()
+        {
+            purchasingMenuPage = new PurchasingMenuPage(driver);
+            purchasingMenuPage.POMaintenancetilePresent().Should().BeTrue();
+        }
+
+        [When(@"I go to the PO Maintenance page")]
+        public void WhenIAmGoToThePOMaintenanceMenuPage()
+        {
+            purchasingMenuPage = new PurchasingMenuPage(driver);
+            purchasingMenuPage.GoToPOMaintainanceMenuPage();
+        }
+
+        [Then(@"the Create Purchase Order Worksheet tile should be present")]
+        public void ThenTheCreatePurchaseOrderWorksheetTileShouldBePresent()
+        {
+            {
+                pomaintenanceMenuPage = new POMaintenanceMenuPage(driver);
+                pomaintenanceMenuPage.CreatePurchaseOrderWorksheettilePresent().Should().BeTrue();
+            }
+            {
+                pomaintenanceMenuPage = new POMaintenanceMenuPage(driver);
+                pomaintenanceMenuPage.GoToCreatePurchaseOrderWorksheetMenuPage();
+            }
+        }
